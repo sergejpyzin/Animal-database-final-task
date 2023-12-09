@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 public class ShowCommands {
 
-    public void showComandsById() {
+    public void showCommands() {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Введите имя таблицы (Pets или PackAnimals): ");
@@ -28,10 +28,10 @@ public class ShowCommands {
             }
         }
 
-        showCommands(titleTable, id);
+        selectCommands(titleTable, id);
     }
 
-    public static void showCommands(String titleTable, int id) {
+    public static void selectCommands (String titleTable, int id) {
         try (Connection connection = DataBaseConnection.getConnection()) {
             String query = "SELECT Commands FROM " + titleTable + " WHERE id = ?";
 

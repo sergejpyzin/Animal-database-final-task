@@ -9,7 +9,7 @@ import java.sql.Statement;
 
 public class SortBirthdateAnimal {
 
-    public static void displaySortedBirthdate(String titleTable) {
+    private void displaySortedBirthdate(String titleTable) {
         System.out.println("Сортировка по возрастанию для таблицы " + titleTable + ":");
 
         try (Connection connection = DataBaseConnection.getConnection()) {
@@ -30,7 +30,7 @@ public class SortBirthdateAnimal {
         }
     }
 
-    public static void sortByBirthdate () {
+    public void sortByBirthdate () {
         displaySortedBirthdate("Pets");
         displaySortedBirthdate("Pack_Animals");
     }

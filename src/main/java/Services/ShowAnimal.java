@@ -9,18 +9,20 @@ import java.sql.SQLException;
 
 public class ShowAnimal {
 
-    public void showPets() {
+    private void showPets() {
         try (Connection connection = DataBaseConnection.getConnection()) {
             String query = "SELECT * FROM Pets";
+            System.out.println("Домашние животные:");
             withdrawalFromDatabase(connection, query);
         } catch (SQLException e) {
             System.out.println("Ошибка при получении данных из таблицы Pets: " + e.getMessage());
         }
     }
 
-    public void showPackAnimals() {
+    private void showPackAnimals() {
         try (Connection connection = DataBaseConnection.getConnection()) {
             String query = "SELECT * FROM Pack_Animals";
+            System.out.println("Вьючные животные:");
             withdrawalFromDatabase(connection, query);
         } catch (SQLException e) {
             System.out.println("Ошибка при получении данных из таблицы Pack_Animals: " + e.getMessage());
@@ -30,8 +32,6 @@ public class ShowAnimal {
     private void withdrawalFromDatabase(Connection connection, String query) throws SQLException {
         PreparedStatement preparedStatement = connection.prepareStatement(query);
         ResultSet resultSet = preparedStatement.executeQuery();
-
-        System.out.println("Содержимое таблицы Pets:");
 
         while (resultSet.next()) {
             int id = resultSet.getInt("id");
@@ -43,5 +43,10 @@ public class ShowAnimal {
             System.out.println("ID: " + id + ", Имя: " + animalName + ", Вид: " + animalType + ", День рождения: " + birthdate + "," +
                     " Выполняемые команды: " + commands);
         }
+    }
+
+    public void showAnimals(){
+        showPets();
+        showPackAnimals();
     }
 }

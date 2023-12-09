@@ -31,7 +31,7 @@ public class ShowCommands {
         selectCommands(titleTable, id);
     }
 
-    public static void selectCommands (String titleTable, int id) {
+    private static void selectCommands (String titleTable, int id) {
         try (Connection connection = DataBaseConnection.getConnection()) {
             String query = "SELECT Commands FROM " + titleTable + " WHERE id = ?";
 

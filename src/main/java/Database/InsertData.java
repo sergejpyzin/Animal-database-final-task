@@ -7,11 +7,13 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+import static Database.DataBaseConnection.getConnection;
+
 public class InsertData {
     public static void addPet(Pets pet) {
-        String insertPetQuery = "INSERT INTO Pets (name_pet, animal_type, birthdate, commands) VALUES (?, ?, ?, ?)";
+        String insertPetQuery = "INSERT INTO Pets (animal_name, animal_type, birthdate, commands) VALUES (?, ?, ?, ?)";
 
-        try (Connection connection = DataBaseConnection.getConnection();
+        try (Connection connection = getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(insertPetQuery)) {
 
             preparedStatement.setString(1, pet.getAnimalName());
@@ -28,9 +30,9 @@ public class InsertData {
     }
 
     public static void addPackAnimal(PackAnimals packAnimal) {
-        String insertPetQuery = "INSERT INTO PackAnimals (name_pack_animal, animal_type, birthdate, commands) VALUES (?, ?, ?, ?)";
+        String insertPetQuery = "INSERT INTO PackAnimals (animal_name, animal_type, birthdate, commands) VALUES (?, ?, ?, ?)";
 
-        try (Connection connection = DataBaseConnection.getConnection();
+        try (Connection connection = getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(insertPetQuery)) {
 
             preparedStatement.setString(1, packAnimal.getAnimalName());

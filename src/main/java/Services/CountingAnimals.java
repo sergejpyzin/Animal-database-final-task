@@ -10,7 +10,7 @@ import java.sql.Statement;
 public class CountingAnimals {
 
 
-    public static int countingAnimaInTable(String titleTable) {
+    private int countingAnimaInTable(String titleTable) {
 
         int count = 0;
 

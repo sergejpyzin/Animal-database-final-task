@@ -10,16 +10,16 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class AddingToDatabase {
-    public static void addAnimalDatabase(Animals animal) {
+    public void addAnimalDatabase(Animals animal) {
         String tableName;
         String insertAnimalQuery;
 
         if (animal instanceof Pets) {
             tableName = "Pets";
-            insertAnimalQuery = "INSERT INTO Pets (Name, Type, BirthDate, Commands) VALUES (?, ?, ?, ?)";
+            insertAnimalQuery = "INSERT INTO Pets (animal_name, animal_type, birthdate, commands) VALUES (?, ?, ?, ?)";
         } else if (animal instanceof PackAnimals) {
             tableName = "PackAnimals";
-            insertAnimalQuery = "INSERT INTO PackAnimals (Name, Type, BirthDate, Commands) VALUES (?, ?, ?, ?)";
+            insertAnimalQuery = "INSERT INTO PackAnimals (animal_name, animal_type, birthdate, commands) VALUES (?, ?, ?, ?)";
         } else {
             System.out.println("Невозможно определить таблицу для добавления животного.");
             return;
@@ -33,8 +33,7 @@ public class AddingToDatabase {
             preparedStatement.setString(3, animal.getBirthdate());
 
             // Проверяем, является ли животное домашним или грузовым
-            if (animal instanceof Pets) {
-                Pets pet = (Pets) animal;
+            if (animal instanceof Pets pet) {
                 preparedStatement.setString(4, pet.getCommands());
             } else {
                 PackAnimals packAnimal = (PackAnimals) animal;

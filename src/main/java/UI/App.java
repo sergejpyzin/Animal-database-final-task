@@ -15,7 +15,7 @@ public class App {
         Scanner scanner = new Scanner(System.in);
 
 
-        Integer selectingMenuItem;
+        int selectingMenuItem;
         while (true) {
 
 
@@ -27,7 +27,8 @@ public class App {
                     3. Вывести список команд животного (выбор животного осуществляется по его id);
                     4. Подсчитать количество всех животных в базе данных;
                     5. Добавить команды животному;
-                    6. Сортировка животных по дате рождения.
+                    6. Сортировка животных по дате рождения;
+                    7. Выход.
                     \t\t Выбор пункта меню осуществляется вводом номера меню (ВНИМАНИЕ! ВВОДИТЬ НЕОБХОДИМО ТОЛЬКО ЦИФРЫ!)
                     """);
             System.out.println("\u001B[34m*|****************************************************************************************************************|*\u001B[0m\n");
@@ -50,8 +51,7 @@ public class App {
                     break;
                 case 2:
                     ShowAnimal showAnimal = new ShowAnimal();
-                    showAnimal.showPets();
-                    showAnimal.showPackAnimals();
+                    showAnimal.showAnimals();
                     break;
                 case 3:
                     ShowCommands showCommands = new ShowCommands();
@@ -69,6 +69,8 @@ public class App {
                     SortBirthdateAnimal sortBirthdateAnimal = new SortBirthdateAnimal();
                     sortBirthdateAnimal.sortByBirthdate();
                     break;
+                case 7:
+                    System.exit(0);
                 default:
                     System.out.println("Ошибка! Введенное число не соответствует номеру пункта меню!");
 

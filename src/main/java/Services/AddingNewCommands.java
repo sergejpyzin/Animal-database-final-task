@@ -34,7 +34,7 @@ public class AddingNewCommands {
         addingNewCommand(titleTable, id, newCommand);
     }
 
-    public static void addingNewCommand(String titleTable, int id, String newCommand) {
+    private void addingNewCommand(String titleTable, int id, String newCommand) {
 
         try (Connection connection = DataBaseConnection.getConnection()) {
             String query = "UPDATE " + titleTable + " SET commands = CONCAT(commands, ', ', ?) WHERE id = ?";

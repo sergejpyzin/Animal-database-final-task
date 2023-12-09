@@ -15,14 +15,7 @@ public class PackAnimals implements Animals{
     private String birthdate;
     private String commands;
 
-    /**
-     * Реализация метода получения поля id
-     * @return - id
-     */
-    @Override
-    public int getID() {
-        return id;
-    }
+
 
     /**
      * Реализация метода получения поля animalName

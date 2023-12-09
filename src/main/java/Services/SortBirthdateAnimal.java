@@ -73,7 +73,7 @@ public class SortBirthdateAnimal {
      */
     public void sortByBirthdate () {
         Scanner scanner = new Scanner(System.in);
-        while (true) {
+        do {
             System.out.println(""" 
                     \u001B[32m****************************************************
                     \t\tМеню сортировки
@@ -112,7 +112,7 @@ public class SortBirthdateAnimal {
                 default:
                     System.out.println("\u001B[31m Ошибка! Введенное число не соответствует номеру пункта меню!");
             }
-        }
+        } while (true);
 
 
     }

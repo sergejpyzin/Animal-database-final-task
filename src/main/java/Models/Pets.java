@@ -16,14 +16,6 @@ public class Pets implements Animals{
     private String commands;
 
 
-    /**
-     * Реализация метода получения поля id
-     * @return - id
-     */
-    @Override
-    public int getID() {
-        return id;
-    }
 
     /**
      * Реализация метода получения поля animalName

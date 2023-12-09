@@ -5,10 +5,9 @@ import java.util.Properties;
 
 public class DatabaseConfig {
     private static final String CONFIG_FILE = "database.properties";
-    private static Properties properties;
+    private static final Properties properties = new Properties();
 
     static {
-        properties = new Properties();
         try (InputStream input = DatabaseConfig.class.getClassLoader().getResourceAsStream(CONFIG_FILE)) {
             if (input == null) {
                 System.out.println("\u001B[31m Извините, но файл " + CONFIG_FILE + " не найден!");

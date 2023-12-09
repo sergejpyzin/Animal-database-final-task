@@ -8,8 +8,8 @@ public class DataBaseConnection {
 
     /**
      * Метод присоединения к серверу MySQL
-     * @return
-     * @throws SQLException
+     * @return - экземпляр класса Connection (соединение с базой данных)
+     * @throws SQLException - ошибка соединения с базой данных
      */
     public static Connection getConnection () throws SQLException {
         String URL = DatabaseConfig.getDatabaseUrl();

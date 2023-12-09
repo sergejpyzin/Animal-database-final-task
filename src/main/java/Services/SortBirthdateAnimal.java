@@ -23,7 +23,7 @@ public class SortBirthdateAnimal {
                 String animalType = resultSet.getString("animal_type");
                 String birthdate = resultSet.getString("birthdate");
 
-                System.out.println("ID: " + id + ", Имя: " + animalName + ", Дата рождения: " + birthdate);
+                System.out.println("id: " + id + ", Имя: " + animalName + ", Дата рождения: " + birthdate);
             }
         } catch (SQLException e) {
             System.out.println("Ошибка при получении данных из таблицы " + titleTable + ": " + e.getMessage());

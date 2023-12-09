@@ -17,27 +17,27 @@ public class AddingAnimal {
         switch (typeAnimal.toLowerCase()) {
             case "dog" :
                 newAnimal = Dog.creatingDog();
-                DatabaseOperations.addAnimalToDatabase(newAnimal);
+                AddingToDatabase.addAnimalDatabase(newAnimal);
                 break;
             case "cat":
                 newAnimal = Cat.creatingCat();
-                DatabaseOperations.addAnimalToDatabase(newAnimal);
+                AddingToDatabase.addAnimalDatabase(newAnimal);
                 break;
             case "hamster":
                 newAnimal = Hamster.creatingHamster();
-                DatabaseOperations.addAnimalToDatabase(newAnimal);
+                AddingToDatabase.addAnimalDatabase(newAnimal);
                 break;
             case "horse":
                 newAnimal = Horse.creatingHorse();
-                DatabaseOperations.addAnimalToDatabase(newAnimal);
+                AddingToDatabase.addAnimalDatabase(newAnimal);
                 break;
             case "camel":
                 newAnimal = Camel.creatingCamel();
-                DatabaseOperations.addAnimalToDatabase(newAnimal);
+                AddingToDatabase.addAnimalDatabase(newAnimal);
                 break;
             case "donkey":
                 newAnimal = Donkey.creatingDonkey();
-                DatabaseOperations.addAnimalToDatabase(newAnimal);
+                AddingToDatabase.addAnimalDatabase(newAnimal);
                 break;
             default:
                 System.out.println("Ошибка! Проверьте правильность введения вида животного!");

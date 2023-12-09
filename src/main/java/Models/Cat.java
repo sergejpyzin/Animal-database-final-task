@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.Scanner;
+
 @Setter
 @Getter
 @NoArgsConstructor
@@ -16,5 +18,21 @@ public class Cat extends Pets {
     private String birthdate;
     private String commands;
 
+    public static Cat creatingCat () {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Введите имя кота/кошки: ");
+        String animalName = scanner.nextLine();
+
+        String animalType = "Cat";
+
+        System.out.println("Введите дату рождения кота/кошки (гггг-мм-дд): ");
+        String birthdate = scanner.nextLine();
+
+        System.out.println("Введите команды для кота/кошки через запятую (например, Sit, Stay, Pounce, Scratch, Mew, Jump): ");
+        String commands = scanner.nextLine();
+
+        return new Cat (animalName, animalType, birthdate, commands);
+    }
 
 }

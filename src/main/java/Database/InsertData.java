@@ -1,5 +1,8 @@
 package Database;
 
+import Models.PackAnimals;
+import Models.Pets;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;

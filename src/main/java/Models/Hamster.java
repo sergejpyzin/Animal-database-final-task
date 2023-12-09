@@ -9,12 +9,10 @@ import lombok.Setter;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Cat extends Pets {
+public class Hamster extends Pets {
 
     private String animalName;
     private String animalType;
     private String birthdate;
     private String commands;
-
-
 }

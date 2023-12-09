@@ -6,6 +6,12 @@ import java.sql.Statement;
 
 public class CreateTables {
 
+    /**
+     * Метод создания таблиц Pets и Pack_animals.
+     * Отправляет SQL запросы на создание таблиц данных на сервер,
+     * В запросе осуществляется проверка существование таблиц с таким именем, если таблиц не существует, создаёт её
+     * @params - no-params
+     */
     public static void creatingTable(){
         try(Connection connection = DataBaseConnection.getConnection()) {
             Statement statement = connection.createStatement();

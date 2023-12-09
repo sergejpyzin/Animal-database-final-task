@@ -6,6 +6,11 @@ import java.sql.SQLException;
 
 public class DataBaseConnection {
 
+    /**
+     * Метод
+     * @return
+     * @throws SQLException
+     */
     public static Connection getConnection () throws SQLException {
         String URL = "jdbc:mysql://localhost:3306/human_friends";
         String USER = "root";

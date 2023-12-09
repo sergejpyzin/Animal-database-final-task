@@ -11,6 +11,10 @@ import java.util.Scanner;
 
 public class SortBirthdateAnimal {
 
+    /**
+     * Метод сортировки данных в таблице, на основании SQL-запроса, и вывода информации в консоль
+     * @param titleTable - строковое значение наименования таблицы
+     */
     private void displaySortedBirthdate(String titleTable) {
         System.out.println("Сортировка по возрастанию даты рождения для таблицы " + titleTable + ":\n");
 
@@ -28,10 +32,14 @@ public class SortBirthdateAnimal {
                 System.out.println("id: " + id + ", Имя: " + animalName + ", Дата рождения: " + birthdate);
             }
         } catch (SQLException e) {
-            System.out.println("Ошибка при получении данных из таблицы " + titleTable + ": " + e.getMessage());
+            System.out.println("\u001B[31mОшибка при получении данных из таблицы " + titleTable + ": " + e.getMessage());
         }
     }
 
+    /**
+     * Метод сортировки по дате рождения данных в объединенной таблице (Pets и PackAnimals), на основании SQL-запроса и
+     * вывода информации на консоль
+     */
     private void displaySortedBirthdateAllAnimals() {
         System.out.println("Сортировка по возрастанию даты рождения для всех животных:\n");
 
@@ -56,20 +64,25 @@ public class SortBirthdateAnimal {
                 System.out.println("ID " + id + ", Вид животного: " + animalType + ", Имя: " + animalName + ", Дата рождения: " + birthdate);
             }
         } catch (SQLException e) {
-            System.out.println("Ошибка при получении данных из базы данных: " + e.getMessage());
+            System.out.println("\u001B[31mОшибка при получении данных из базы данных: " + e.getMessage());
         }
     }
 
+    /**
+     * Меню выбора метода сортировки, на основании ответа от пользователя
+     */
     public void sortByBirthdate () {
         Scanner scanner = new Scanner(System.in);
         while (true) {
-            System.out.println("""
+            System.out.println(""" 
+                    \u001B[32m****************************************************
                     \t\tМеню сортировки
                     Выберите таблицу для сортировки (Выбор осуществляется вводом номера пункта меню.):\n
                     1. Общая сортировка всей базы данных;
                     2. Сортировка таблицы Домашних животных;
                     3. Сортировка таблицы Вьючных животных;
-                    4. Выход из меню сортировки.""");
+                    4. Выход из меню сортировки.
+                    ***************************************************** \u001B[37m""");
 
             int selectingMenuItem;
             while (true) {
@@ -79,7 +92,7 @@ public class SortBirthdateAnimal {
                     selectingMenuItem = Integer.parseInt(scanner.nextLine());
                     break;
                 } catch (NumberFormatException e) {
-                    System.out.println("Номер пункта меню должен быть числом. Попробуйте снова." + e.getMessage());
+                    System.out.println("\u001B[31m Номер пункта меню должен быть числом. Попробуйте снова." + e.getMessage());
                 }
             }
 
@@ -97,7 +110,7 @@ public class SortBirthdateAnimal {
                     App.runApp();
                     break;
                 default:
-                    System.out.println("Ошибка! Введенное число не соответствует номеру пункта меню!");
+                    System.out.println("\u001B[31m Ошибка! Введенное число не соответствует номеру пункта меню!");
             }
         }
 

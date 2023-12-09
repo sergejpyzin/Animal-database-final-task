@@ -7,7 +7,7 @@ import java.sql.SQLException;
 public class DataBaseConnection {
 
     /**
-     * Метод
+     * Метод присоединения к серверу MySQL
      * @return
      * @throws SQLException
      */

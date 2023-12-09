@@ -18,6 +18,11 @@ public class Horse extends PackAnimals {
     private String birthdate;
     private String commands;
 
+    /**
+     * Статический метод создания экземпляра класса Horse.
+     * Наследник класса PackAnimals
+     * @return - экземпляр класса Horse
+     */
     public static Horse creatingHorse () {
         Scanner scanner = new Scanner(System.in);
 

@@ -8,6 +8,9 @@ import java.util.Scanner;
 
 public class App {
 
+    /**
+     * Основное меню взаимодействия с базой данных
+     */
     public static void runApp() {
         CreateDatabase createDatabase = CreateDatabase.createDatabase();
         CreateTables.creatingTable();
@@ -19,7 +22,7 @@ public class App {
         while (true) {
 
 
-            System.out.println("\u001B[34m*|****************************************************************************************************************|*");
+            System.out.println("\u001B[32m **************************************************************");
             System.out.println("""
                     \t\tМЕНЮ
                     1. Добавление животного в базу данных;
@@ -29,9 +32,9 @@ public class App {
                     5. Добавить команды животному;
                     6. Сортировка животных по дате рождения;
                     7. Выход.
-                    \t\t Выбор пункта меню осуществляется вводом номера меню (ВНИМАНИЕ! ВВОДИТЬ НЕОБХОДИМО ТОЛЬКО ЦИФРЫ!)
+                    \t\t Выбор пункта меню осуществляется вводом номера меню (\u001B[31mВНИМАНИЕ! ВВОДИТЬ НЕОБХОДИМО ТОЛЬКО ЦИФРЫ!\u001B[32m)
                     """);
-            System.out.println("\u001B[34m*|****************************************************************************************************************|*\u001B[0m\n");
+            System.out.println("\u001B[32m ****************************************************************** \u001B[37m");
 
             while (true) {
                 System.out.println("Введите номер пункта меню: ");
@@ -40,7 +43,7 @@ public class App {
                     selectingMenuItem = Integer.parseInt(scanner.nextLine());
                     break;
                 } catch (NumberFormatException e) {
-                    System.out.println("Номер пункта меню должен быть числом. Попробуйте снова." + e.getMessage());
+                    System.out.println("\u001B[31m Номер пункта меню должен быть числом. Попробуйте снова." + e.getMessage());
                 }
             }
 
@@ -72,7 +75,7 @@ public class App {
                 case 7:
                     System.exit(0);
                 default:
-                    System.out.println("Ошибка! Введенное число не соответствует номеру пункта меню!");
+                    System.out.println("\u001B[31m Ошибка! Введенное число не соответствует номеру пункта меню!");
 
             }
 

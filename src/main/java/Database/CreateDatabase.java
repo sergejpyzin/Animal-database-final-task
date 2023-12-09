@@ -7,7 +7,7 @@ import java.sql.Statement;
 public class CreateDatabase {
 
     /**
-     * Метод создания базы данных.
+     * Статический метод создания базы данных.
      * Отправляет SQL запрос на создание базы данных на сервер,
      * В запросе осуществляется проверка существование базы данных с таким именем, если база данных не существует, создаёт её
      * @params - no-params
@@ -19,7 +19,7 @@ public class CreateDatabase {
             statement.executeUpdate(sql);
             System.out.println("База данных human_friends создана успешно!");
         } catch (SQLException e) {
-            System.out.println("Ошибка при создании базы данных: " + e.getMessage());
+            System.out.println("\u001B[31m Ошибка при создании базы данных: " + e.getMessage());
         }
         return null;
     }

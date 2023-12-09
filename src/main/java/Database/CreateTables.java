@@ -7,7 +7,7 @@ import java.sql.Statement;
 public class CreateTables {
 
     /**
-     * Метод создания таблиц Pets и Pack_animals.
+     * Статический метод создания таблиц Pets и Pack_animals.
      * Отправляет SQL запросы на создание таблиц данных на сервер,
      * В запросе осуществляется проверка существование таблиц с таким именем, если таблиц не существует, создаёт её
      * @params - no-params
@@ -24,7 +24,7 @@ public class CreateTables {
 
             System.out.println("Таблицы Pets и Pack_Animals созданы успешно!");
         } catch (SQLException e) {
-            System.out.println("Ошибка при создании таблиц: " + e.getMessage());
+            System.out.println("\u001B[31m Ошибка при создании таблиц: " + e.getMessage());
         }
     }
 }

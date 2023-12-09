@@ -10,6 +10,9 @@ import java.util.Scanner;
 
 public class ShowCommands {
 
+    /**
+     * Метод получения списка команд на основании id, полученного от пользователя, элемента таблицы
+     */
     public void showCommands() {
         Scanner scanner = new Scanner(System.in);
 
@@ -24,13 +27,18 @@ public class ShowCommands {
                 id = Integer.parseInt(scanner.nextLine());
                 break;
             } catch (NumberFormatException e){
-                System.out.println("id должен быть числом. Попробуйте снова." + e.getMessage());
+                System.out.println("\u001B[31m id должен быть числом. Попробуйте снова." + e.getMessage());
             }
         }
 
         selectCommands(titleTable, id);
     }
 
+    /**
+     * Метод вывода в консоль списка команд на основании SQL-запроса
+     * @param titleTable - строковое значение наименования таблицы
+     * @param id - целочисленное, неотрицательное, значение id (параметр таблицы)
+     */
     private static void selectCommands (String titleTable, int id) {
         try (Connection connection = DataBaseConnection.getConnection()) {
             String query = "SELECT Commands FROM " + titleTable + " WHERE id = ?";
@@ -47,7 +55,7 @@ public class ShowCommands {
                 System.out.println("Животное с id " + id + " в таблице " + titleTable + " не найдено.");
             }
         } catch (SQLException e) {
-            System.out.println("Ошибка при получении команд: " + e.getMessage());
+            System.out.println("\u001B[31m Ошибка при получении команд: " + e.getMessage());
         }
     }
 }

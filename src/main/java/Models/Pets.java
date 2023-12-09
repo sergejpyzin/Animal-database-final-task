@@ -14,26 +14,48 @@ public class Pets implements Animals{
     private String animalType;
     private String birthdate;
     private String commands;
+
+
+    /**
+     * Реализация метода получения поля id
+     * @return - id
+     */
     @Override
     public int getID() {
         return id;
     }
 
+    /**
+     * Реализация метода получения поля animalName
+     * @return - animalName
+     */
     @Override
     public String getAnimalName() {
         return animalName;
     }
 
+    /**
+     * Реализация метода получения поля animalType
+     * @return - animalType
+     */
     @Override
     public String getAnimalType() {
         return animalType;
     }
 
+    /**
+     * Реализация метода получения поля birthdate
+     * @return - birthdate
+     */
     @Override
     public String getBirthdate() {
         return birthdate;
     }
 
+    /**
+     * Реализация метода получения поля commands
+     * @return - commands
+     */
     @Override
     public String getCommands() {
         return commands;

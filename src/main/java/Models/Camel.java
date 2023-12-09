@@ -18,6 +18,11 @@ public class Camel extends PackAnimals {
     private String birthdate;
     private String commands;
 
+    /**
+     * Статический метод создания экземпляра класса Camel.
+     * Наследник класса PackAnimals
+     * @return - экземпляр класса Camel
+     */
     public static Camel creatingCamel () {
         Scanner scanner = new Scanner(System.in);
 

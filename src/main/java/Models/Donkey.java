@@ -18,6 +18,11 @@ public class Donkey extends PackAnimals {
     private String birthdate;
     private String commands;
 
+    /**
+     * Статический метод создания экземпляра класса Donkey.
+     * Наследник класса PackAnimals
+     * @return - экземпляр класса Donkey
+     */
     public static Donkey creatingDonkey () {
         Scanner scanner = new Scanner(System.in);
 

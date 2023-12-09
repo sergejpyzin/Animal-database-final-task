@@ -18,6 +18,11 @@ public class Hamster extends Pets {
     private String birthdate;
     private String commands;
 
+    /**
+     * Статический метод создания экземпляра класса Hamster.
+     * Наследник класса Pets
+     * @return - экземпляр класса Hamster
+     */
     public static Hamster creatingHamster () {
         Scanner scanner = new Scanner(System.in);
 

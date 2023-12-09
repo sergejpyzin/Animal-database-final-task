@@ -18,6 +18,11 @@ public class Cat extends Pets {
     private String birthdate;
     private String commands;
 
+    /**
+     * Статический метод создания экземпляра класса Cat.
+     * Наследник класса Pets
+     * @return - экземпляр класса Cat
+     */
     public static Cat creatingCat () {
         Scanner scanner = new Scanner(System.in);
 

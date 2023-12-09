@@ -18,6 +18,11 @@ public class Dog extends Pets {
     private String birthdate;
     private String commands;
 
+    /**
+     * Статический метод создания экземпляра класса Dog.
+     * Наследник класса Pets
+     * @return - экземпляр класса Dog
+     */
     public static Dog creatingDog () {
         Scanner scanner = new Scanner(System.in);
 

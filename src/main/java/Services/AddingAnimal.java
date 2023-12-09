@@ -6,6 +6,11 @@ import java.util.Scanner;
 
 public class AddingAnimal {
 
+    /**
+     * Метод создания экземпляров классов Pets и PackAnimal на основании запросов к пользователю и добавления в базу данных.
+     * Считывает с консоли ответ от пользователя и на основании полученных данных создает экземпляр соответствующего класса
+     * и заносит его в соответствующую таблицу базы данных
+     */
     public void addingAnimal (){
 
         Animals newAnimal;
@@ -41,7 +46,7 @@ public class AddingAnimal {
                 addingToDatabase.addAnimalDatabase(newAnimal);
                 break;
             default:
-                System.out.println("Ошибка! Проверьте правильность введения вида животного!");
+                System.out.println("\u001B[31m Ошибка! Проверьте правильность введения вида животного!");
         }
     }
 }
